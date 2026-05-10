@@ -257,5 +257,44 @@
       if (e.key === 'Escape' &&!mobileMenu.classList.contains('translate-x-full')) closeMenu();
     });
   </script>
+
+  <!-- FIREBASE AUTH SCRIPT FOR SMART HEADER -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY",
+      authDomain: "veta-company.firebaseapp.com",
+      projectId: "veta-company",
+      storageBucket: "veta-company.firebasestorage.app",
+      messagingSenderId: "1064132903129",
+      appId: "1:1064132903129:web:af77587575d20937cb7ec8"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    
+    onAuthStateChanged(auth, (user) => {
+      const loginBtns = document.querySelectorAll('a[href="login.html"]');
+      const registerBtns = document.querySelectorAll('a[href="register.html"]');
+      
+      if (user) {
+        loginBtns.forEach(btn => {
+          btn.textContent = 'Logout';
+          btn.href = '#';
+          btn.onclick = (e) => {
+            e.preventDefault();
+            signOut(auth).then(() => window.location.href = 'index.html');
+          };
+        });
+        registerBtns.forEach(btn => {
+          btn.textContent = user.email.split('@')[0];
+          btn.href = '#';
+          btn.className = btn.className.replace('bg-primary text-black', 'border border-primary text-primary');
+        });
+      }
+    });
+  </script>
 </body>
 </html>

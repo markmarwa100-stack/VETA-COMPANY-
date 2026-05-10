@@ -8,6 +8,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
 
 <script>
   tailwind.config = {
@@ -37,33 +38,83 @@
 
 <style>
   body { font-family: 'Inter', sans-serif; }
-  .form-control {
-    background: #111827 !important;
-    border: 1px solid #414754 !important;
-    color: #e5e2e1 !important;
+ .form-control {
+    background: #111827!important;
+    border: 1px solid #414754!important;
+    color: #e5e2e1!important;
     height: 50px;
   }
-  .form-control:focus {
-    background: #111827 !important;
-    color: #e5e2e1 !important;
-    border-color: #adc7ff !important;
-    box-shadow: 0 0 0 1px #adc7ff !important;
+ .form-control:focus {
+    background: #111827!important;
+    color: #e5e2e1!important;
+    border-color: #adc7ff!important;
+    box-shadow: 0 0 0 1px #adc7ff!important;
   }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  #mobile-menu.translate-x-full { transform: translateX(100%); }
 </style>
 </head>
 
 <body class="bg-background text-on-surface min-h-screen flex flex-col">
-  <header class="w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant">
-    <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-container mx-auto">
-      <a href="index.html" class="text-xl font-bold text-primary tracking-tight font-display">VETA COMPANY LTD</a>
-      <div class="flex items-center gap-6">
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="login.html">Login</a>
+  <!-- NEW HEADER WITH FORGOT LINK -->
+  <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+        <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+      </a>
+      <nav class="hidden lg:flex gap-6 items-center">
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="galary.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="login.html">Login</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
+        <a class="text-primary font-semibold text-sm uppercase tracking-wider" href="forgot.html">Forgot</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
+          <a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
+        </div>
+        <button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
       </div>
     </div>
   </header>
+  
+  <div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full p-8">
+      <div class="flex justify-between items-center mb-12">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+          <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+        </div>
+        <button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a class="text-2xl font-bold text-white" href="index.html">Home</a>
+        <a class="text-2xl font-bold text-white" href="about.html">About</a>
+        <a class="text-2xl font-bold text-white" href="services.html">Services</a>
+        <a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
+        <a class="text-2xl font-bold text-white" href="galary.html">Gallery</a>
+        <a class="text-2xl font-bold text-white" href="login.html">Login</a>
+        <a class="text-2xl font-bold text-white" href="register.html">Register</a>
+        <a class="text-2xl font-bold text-primary" href="forgot.html">Forgot Password</a>
+        <div class="pt-8 flex flex-col gap-4">
+          <a href="login.html" class="w-full py-4 bg-primary text-black font-bold rounded-xl text-lg text-center">Login</a>
+          <a href="register.html" class="w-full py-4 border border-outline-variant text-white font-bold rounded-xl text-lg text-center">Register</a>
+        </div>
+      </nav>
+    </div>
+  </div>
 
-  <main class="flex-grow flex items-center justify-center px-4 py-12">
+  <main class="flex-grow flex items-center justify-center px-4 py-12 pt-24">
     <div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-2xl p-8 md:p-10 shadow-2xl">
       <div class="text-center mb-8">
         <h1 class="text-3xl font-bold text-primary mb-3 font-display">Forgot Password</h1>
@@ -99,6 +150,21 @@
       </div>
     </div>
   </main>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
+  menuToggle.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' &&!mobileMenu.classList.contains('translate-x-full')) closeMenu();
+  });
+</script>
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";

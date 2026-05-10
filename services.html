@@ -4,11 +4,9 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | VETA COMPANY LTD</title>
-  <meta name="description" content="VETA COMPANY LTD services: Web development, software engineering, cybersecurity, IT consulting, cloud services, and network infrastructure.">
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
-
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -16,18 +14,15 @@
         extend: {
           colors: {
             primary: "#adc7ff",
-            tertiary: "#33d7fe",
             background: "#131313",
             surface: "#131313",
             "surface-1": "#121212",
             "surface-2": "#18181b",
             "on-surface": "#e5e2e1",
-            "on-surface-variant": "#c1c6d7",
+            "on-surface-variant": "#a1a1aa",
             "outline-variant": "#414754"
           },
-          maxWidth: {
-            'container': '1320px'
-          },
+          maxWidth: { 'container': '1320px' },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
             display: ['Space Grotesk', 'sans-serif']
@@ -36,40 +31,34 @@
       }
     }
   </script>
-
   <style>
- .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-    #mobile-menu {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    #mobile-menu.translate-x-full {
-      transform: translateX(100%);
-    }
-   .hero-pattern {
-      background-image: radial-gradient(circle at 2px 2px, #1e1e1e 1px, transparent 0);
-      background-size: 40px 40px;
-    }
+    body { font-family: 'Inter', sans-serif; }
+   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    #mobile-menu.translate-x-full { transform: translateX(100%); }
   </style>
 </head>
-
-<body class="bg-background text-on-surface font-sans">
-  <!-- TopNavBar -->
-  <header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant">
-    <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-container mx-auto">
-      <a href="index.html" class="text-xl font-bold text-primary tracking-tight font-display">VETA COMPANY LTD</a>
-
-      <nav class="hidden lg:flex items-center gap-8">
-        <a class="text-sm text-primary font-bold border-b-2 border-primary pb-1" href="services.html">Services</a>
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a>
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+<body class="bg-background text-on-surface">
+  <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+        <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+      </a>
+      <nav class="hidden lg:flex gap-6 items-center">
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="about.html">About</a>
+        <a class="text-primary font-bold text-sm uppercase tracking-wider" href="services.html">Services</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="galary.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="login.html">Login</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
       </nav>
-
       <div class="flex items-center gap-3">
-        <button class="hidden lg:block text-sm text-on-surface-variant hover:text-tertiary transition-colors">Client Login</button>
-        <a href="contact.html" class="bg-primary text-black px-6 py-2 text-sm font-bold hover:bg-opacity-90 transition-all rounded-lg">Contact Us</a>
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
+          <a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
+        </div>
         <button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
@@ -77,194 +66,52 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
   <div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
     <div class="flex flex-col h-full p-8">
       <div class="flex justify-between items-center mb-12">
-        <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+          <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+        </div>
         <button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
           <span class="material-symbols-outlined text-3xl">close</span>
         </button>
       </div>
       <nav class="flex flex-col gap-6">
         <a class="text-2xl font-bold text-white" href="index.html">Home</a>
-        <a class="text-2xl font-bold text-primary" href="services.html">Services</a>
-        <a class="text-2xl font-bold text-white" href="process.html">Process</a>
         <a class="text-2xl font-bold text-white" href="about.html">About</a>
+        <a class="text-2xl font-bold text-primary" href="services.html">Services</a>
         <a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
-        <div class="pt-8">
-          <button class="w-full py-4 bg-primary text-black font-bold rounded-xl text-lg">Client Login</button>
+        <a class="text-2xl font-bold text-white" href="galary.html">Gallery</a>
+        <a class="text-2xl font-bold text-white" href="login.html">Login</a>
+        <a class="text-2xl font-bold text-white" href="register.html">Register</a>
+        <a class="text-lg font-semibold text-on-surface-variant" href="forgot.html">Forgot Password</a>
+        <div class="pt-8 flex flex-col gap-4">
+          <a href="login.html" class="w-full py-4 bg-primary text-black font-bold rounded-xl text-lg text-center">Login</a>
+          <a href="register.html" class="w-full py-4 border border-outline-variant text-white font-bold rounded-xl text-lg text-center">Register</a>
         </div>
       </nav>
     </div>
   </div>
 
-  <main class="pt-24">
-    <!-- Hero Section -->
-    <section class="hero-pattern relative py-24 md:py-32 overflow-hidden border-b border-outline-variant">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/90"></div>
-      <div class="max-w-container mx-auto px-4 md:px-8 relative z-10">
-        <div class="max-w-3xl">
-          <span class="text-xs text-primary uppercase tracking-[0.2em] mb-4 block font-semibold">Engineered Integrity</span>
-          <h1 class="text-4xl md:text-5xl font-bold text-on-surface mb-6 font-display">Our Services</h1>
-          <p class="text-lg text-on-surface-variant">Leading the way in advanced technology and engineering solutions for a secure digital future. We architect robust systems that withstand the complexities of modern digital threats.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Bento Grid -->
-    <section class="py-20 bg-background">
-      <div class="max-w-container mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <!-- Web Development -->
-          <div class="md:col-span-8 bg-surface-1 border border-outline-variant p-8 hover:border-primary transition-colors group rounded-xl">
-            <div class="flex flex-col h-full">
-              <span class="material-symbols-outlined text-primary mb-6 text-5xl">language</span>
-              <h3 class="text-2xl font-semibold text-on-surface mb-3 font-display">Web Development</h3>
-              <p class="text-base text-on-surface-variant mb-6">Scalable, high-performance web architectures built with React, Node.js, and specialized security protocols for enterprise-level resilience.</p>
-              <div class="mt-auto flex gap-2 flex-wrap">
-                <span class="text-xs px-2 py-1 border border-outline-variant text-outline-variant uppercase">Next.js</span>
-                <span class="text-xs px-2 py-1 border border-outline-variant text-outline-variant uppercase">TypeScript</span>
-                <span class="text-xs px-2 py-1 border border-outline-variant text-outline-variant uppercase">WAF Integration</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Software Development -->
-          <div class="md:col-span-4 bg-surface-1 border border-outline-variant p-8 hover:border-primary transition-colors rounded-xl">
-            <span class="material-symbols-outlined text-primary mb-6 text-5xl">developer_mode_tv</span>
-            <h3 class="text-2xl font-semibold text-on-surface mb-3 font-display">Software Development</h3>
-            <p class="text-base text-on-surface-variant">Custom engineering of mission-critical desktop and cross-platform applications using modern tech stacks.</p>
-          </div>
-
-          <!-- Cybersecurity -->
-          <div class="md:col-span-4 bg-surface-2 border border-primary/30 p-8 relative overflow-hidden group rounded-xl">
-            <div class="absolute top-0 right-0 p-4 opacity-20">
-              <span class="material-symbols-outlined text-primary text-7xl">shield_lock</span>
-            </div>
-            <span class="material-symbols-outlined text-tertiary mb-6 text-5xl">enhanced_encryption</span>
-            <h3 class="text-2xl font-semibold text-on-surface mb-3 font-display">Cybersecurity Solutions</h3>
-            <p class="text-base text-on-surface-variant">Offensive and defensive security strategies including penetration testing, threat modeling, and 24/7 SOC monitoring.</p>
-          </div>
-
-          <!-- IT Consulting -->
-          <div class="md:col-span-4 bg-surface-1 border border-outline-variant p-8 hover:border-primary transition-colors rounded-xl">
-            <span class="material-symbols-outlined text-primary mb-6 text-5xl">query_stats</span>
-            <h3 class="text-2xl font-semibold text-on-surface mb-3 font-display">IT Consulting</h3>
-            <p class="text-base text-on-surface-variant">Strategic guidance for digital transformation, infrastructure auditing, and technical roadmap development.</p>
-          </div>
-
-          <!-- Cloud Services -->
-          <div class="md:col-span-4 bg-surface-1 border border-outline-variant p-8 hover:border-primary transition-colors rounded-xl">
-            <span class="material-symbols-outlined text-primary mb-6 text-5xl">cloud_done</span>
-            <h3 class="text-2xl font-semibold text-on-surface mb-3 font-display">Cloud Services</h3>
-            <p class="text-base text-on-surface-variant">Architecture and deployment on AWS, Azure, and GCP with a focus on high availability and automated disaster recovery.</p>
-          </div>
-
-          <!-- Network Infrastructure -->
-          <div class="md:col-span-12 bg-surface-1 border border-outline-variant p-8 hover:border-primary transition-colors flex flex-col md:flex-row gap-8 items-center rounded-xl">
-            <div class="md:w-1/2">
-              <span class="material-symbols-outlined text-primary mb-6 text-5xl">router</span>
-              <h3 class="text-2xl font-semibold text-on-surface mb-3 font-display">Network Infrastructure</h3>
-              <p class="text-base text-on-surface-variant">Design and implementation of low-latency, high-bandwidth enterprise networks with integrated zero-trust security layers.</p>
-            </div>
-            <div class="md:w-1/2 w-full h-48 bg-background border border-outline-variant relative rounded-lg overflow-hidden">
-              <img alt="Data Center" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDs1JBIxPd7_5YUcJBGeLIFyvkeha8SOYVrbzg7a-GtgQUIM9QbVVAjfyjH-Cmg1RNEl4GlAkofv6XKKJL7hqY9VSonoyw9DVnheYOeUImuYGR_txBQNIZz0ph3hzMVfPh1MO1UxxcEf9sJvBqDB4lIftq-7gRe6pO_O8zaT8auMJR-yWYb6A76wZZPWRM3g2mFmrH-j-brWRIEb4soyoh-5g_twnZqe9FsbrFou030dAr7yDefj6xWefk943wITiQ5Dn5Thw1nhz7" loading="lazy"/>
-              <div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-24 bg-black border-y border-outline-variant">
-      <div class="max-w-container mx-auto px-4 md:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-semibold text-on-surface mb-4 font-display">Our Methodical Approach</h2>
-          <p class="text-base text-on-surface-variant max-w-xl mx-auto">We follow a strict engineering lifecycle to ensure every deployment meets VETA's standards for performance and security.</p>
-        </div>
-        <div class="relative">
-          <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-outline-variant -translate-y-1/2 z-0"></div>
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-            <div class="bg-surface p-6 border border-outline-variant text-center rounded-xl">
-              <div class="w-12 h-12 bg-primary text-black flex items-center justify-center font-bold mx-auto mb-4 rounded-full">01</div>
-              <h4 class="text-2xl font-semibold text-on-surface mb-2 font-display">Consultation</h4>
-              <p class="text-sm text-on-surface-variant">Deep dive into technical requirements and security compliance needs.</p>
-            </div>
-            <div class="bg-surface p-6 border border-outline-variant text-center rounded-xl">
-              <div class="w-12 h-12 bg-primary text-black flex items-center justify-center font-bold mx-auto mb-4 rounded-full">02</div>
-              <h4 class="text-2xl font-semibold text-on-surface mb-2 font-display">Planning</h4>
-              <p class="text-sm text-on-surface-variant">Architectural blueprints and threat modeling for long-term scalability.</p>
-            </div>
-            <div class="bg-surface p-6 border border-outline-variant text-center rounded-xl">
-              <div class="w-12 h-12 bg-primary text-black flex items-center justify-center font-bold mx-auto mb-4 rounded-full">03</div>
-              <h4 class="text-2xl font-semibold text-on-surface mb-2 font-display">Development</h4>
-              <p class="text-sm text-on-surface-variant">Agile execution using clean code principles and continuous security testing.</p>
-            </div>
-            <div class="bg-surface p-6 border border-outline-variant text-center rounded-xl">
-              <div class="w-12 h-12 bg-primary text-black flex items-center justify-center font-bold mx-auto mb-4 rounded-full">04</div>
-              <h4 class="text-2xl font-semibold text-on-surface mb-2 font-display">Deployment</h4>
-              <p class="text-sm text-on-surface-variant">Seamless go-live with comprehensive monitoring and support.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-24 bg-background">
-      <div class="max-w-container mx-auto px-4 md:px-8">
-        <div class="bg-surface-2 border border-outline-variant p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 rounded-2xl">
-          <div>
-            <h2 class="text-3xl font-semibold text-on-surface mb-6 font-display">Start Your Project With Us</h2>
-            <p class="text-base text-on-surface-variant mb-8">Secure your digital future today. Our engineering team is ready to analyze your requirements and provide a robust technical proposal.</p>
-            <div class="space-y-4">
-              <div class="flex items-center gap-4 text-on-surface-variant">
-                <span class="material-symbols-outlined text-primary">verified_user</span>
-                <span class="text-xs uppercase font-semibold">ISO 27001 Compliant Operations</span>
-              </div>
-              <div class="flex items-center gap-4 text-on-surface-variant">
-                <span class="material-symbols-outlined text-primary">https</span>
-                <span class="text-xs uppercase font-semibold">256-bit AES End-to-End Encryption</span>
-              </div>
-            </div>
-          </div>
-          <form class="space-y-6">
-            <div>
-              <label class="text-xs text-on-surface uppercase mb-2 block font-semibold">Full Name</label>
-              <input class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all rounded-lg" placeholder="John Doe" type="text"/>
-            </div>
-            <div>
-              <label class="text-xs text-on-surface uppercase mb-2 block font-semibold">Corporate Email</label>
-              <input class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="you@company.com" type="email"/>
-            </div>
-            <div>
-              <label class="text-xs text-on-surface uppercase mb-2 block font-semibold">Project Scope</label>
-              <textarea class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all rounded-lg" placeholder="Describe your technical requirements..." rows="4"></textarea>
-            </div>
-            <button class="w-full bg-primary text-black font-bold py-4 hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2 rounded-lg" type="submit">
-              Initialize Secure Connection
-              <span class="material-symbols-outlined">send</span>
-            </button>
-            <p class="text-xs text-center text-outline-variant uppercase tracking-wider">All communications are logged and encrypted per VETA Cybersecurity Standards.</p>
-          </form>
-        </div>
-      </div>
+  <main class="pt-20">
+    <section class="py-16 px-4 md:px-8 max-w-container mx-auto">
+      <h1 class="text-4xl font-bold text-white mb-6 font-display">Our Services</h1>
+      <p class="text-on-surface-variant">Add your services content here...</p>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-surface-1 border-t border-outline-variant">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full px-4 md:px-8 py-16 max-w-container mx-auto">
-      <div class="flex flex-col gap-4">
-        <div class="text-xl font-bold text-on-surface font-display">VETA COMPANY LTD</div>
-        <p class="text-sm text-on-surface-variant max-w-sm">© 2026 VETA COMPANY LTD. Engineering Excellence & Digital Security. Delivering world-class infrastructure and cybersecurity solutions.</p>
+  <footer class="bg-black border-t border-outline-variant/20 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 max-w-container mx-auto gap-6">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-xl">engineering</span>
+        <span class="text-lg font-bold text-primary tracking-tighter font-display">VETA</span>
       </div>
-      <div class="flex flex-wrap md:justify-end gap-x-8 gap-y-4 items-center">
-        <a class="text-sm text-on-surface-variant hover:text-tertiary transition-colors" href="privacy.html">Privacy Policy</a>
-        <a class="text-sm text-on-surface-variant hover:text-tertiary transition-colors" href="security.html">Cybersecurity Standards</a>
-        <a class="text-sm text-on-surface-variant hover:text-tertiary transition-colors" href="terms.html">Terms of Service</a>
+      <p class="text-xs text-on-surface-variant">© 2026 VETA COMPANY LTD. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy</a>
+        <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
+        <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
@@ -273,29 +120,13 @@
     const menuToggle = document.getElementById('menu-toggle');
     const menuClose = document.getElementById('menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
-
-    function openMenu() {
-      mobileMenu.classList.remove('translate-x-full');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu() {
-      mobileMenu.classList.add('translate-x-full');
-      document.body.style.overflow = '';
-    }
-
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
     menuToggle.addEventListener('click', openMenu);
     menuClose.addEventListener('click', closeMenu);
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' &&!mobileMenu.classList.contains('translate-x-full')) {
-        closeMenu();
-      }
-    });
+    menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' &&!mobileMenu.classList.contains('translate-x-full')) closeMenu(); });
   </script>
 </body>
 </html>

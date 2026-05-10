@@ -108,12 +108,12 @@
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
+      apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY",
+      authDomain: "veta-company.firebaseapp.com",
+      projectId: "veta-company",
+      storageBucket: "veta-company.firebasestorage.app",
+      messagingSenderId: "1064132903129",
+      appId: "1:1064132903129:web:af77587575d20937cb7ec8"
     };
     
     const app = initializeApp(firebaseConfig);
@@ -134,9 +134,9 @@
       
       try {
         await createUserWithEmailAndPassword(auth, email, password);
-        msg.textContent = "Account created! Redirecting...";
+        msg.textContent = "Account created! Redirecting to login...";
         msg.className = "text-green-500 text-sm text-center";
-        setTimeout(() => window.location.href = 'index.html', 1500);
+        setTimeout(() => window.location.href = 'login.html', 1500);
       } catch (error) {
         msg.textContent = error.message;
         msg.className = "text-red-500 text-sm text-center";

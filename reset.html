@@ -1,167 +1,142 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forgot Password | VETA COMPANY LTD</title>
-<meta name="description" content="Reset your VETA COMPANY LTD account password securely.">
-
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
-
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          primary: "#adc7ff",
-          background: "#131313",
-          surface: "#131313",
-          "surface-1": "#121212",
-          "on-surface": "#e5e2e1",
-          "on-surface-variant": "#a1a1aa",
-          "outline-variant": "#414754"
-        },
-        maxWidth: {
-          'container': '1320px'
-        },
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          display: ['Space Grotesk', 'sans-serif']
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forgot Password | VETA COMPANY LTD</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#adc7ff", background: "#131313", surface: "#131313", "surface-1": "#121212",
+            "surface-2": "#18181b", "on-surface": "#e5e2e1", "on-surface-variant": "#a1a1aa", "outline-variant": "#414754"
+          },
+          maxWidth: { 'container': '1320px' },
+          fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] }
         }
       }
     }
-  }
-</script>
-
-<style>
-  body { font-family: 'Inter', sans-serif; }
-  .form-control {
-    background: #111827 !important;
-    border: 1px solid #414754 !important;
-    color: #e5e2e1 !important;
-    height: 50px;
-  }
-  .form-control:focus {
-    background: #111827 !important;
-    color: #e5e2e1 !important;
-    border-color: #adc7ff !important;
-    box-shadow: 0 0 0 1px #adc7ff !important;
-  }
-</style>
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    #mobile-menu.translate-x-full { transform: translateX(100%); }
+  </style>
 </head>
-
-<body class="bg-background text-on-surface min-h-screen flex flex-col">
-  <header class="w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant">
-    <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-container mx-auto">
-      <a href="index.html" class="text-xl font-bold text-primary tracking-tight font-display">VETA COMPANY LTD</a>
-      <div class="flex items-center gap-6">
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="login.html">Login</a>
+<body class="bg-background text-on-surface">
+  <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+        <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+      </a>
+      <nav class="hidden lg:flex gap-6 items-center">
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="about.html">About</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="galary.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="login.html">Login</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
+          <a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
+        </div>
+        <button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
       </div>
     </div>
   </header>
-
-  <main class="flex-grow flex items-center justify-center px-4 py-12">
-    <div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-2xl p-8 md:p-10 shadow-2xl">
-      <div class="text-center mb-8">
-        <h1 class="text-3xl font-bold text-primary mb-3 font-display">Forgot Password</h1>
-        <p class="text-on-surface-variant text-sm">
-          Enter your email address and we'll send you a secure reset link.
-        </p>
-      </div>
-
-      <form id="forgotForm" class="space-y-6">
-        <div>
-          <label class="block text-sm text-on-surface-variant mb-2 uppercase tracking-wider font-semibold">Email Address</label>
-          <input type="email" id="email" class="form-control w-full rounded-lg px-4" placeholder="you@company.com" required autocomplete="email">
+  <div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
+    <div class="flex flex-col h-full p-8">
+      <div class="flex justify-between items-center mb-12">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+          <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
         </div>
-
-        <button type="submit" id="resetBtn" class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:bg-opacity-90 active:scale-[0.98] transition-all disabled:opacity-50">
-          Send Reset Link
+        <button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
         </button>
-
-        <p id="forgotStatus" class="text-sm text-center hidden"></p>
-      </form>
-
-      <div class="border-t border-outline-variant mt-8 pt-6">
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a class="text-2xl font-bold text-white" href="index.html">Home</a>
+        <a class="text-2xl font-bold text-white" href="about.html">About</a>
+        <a class="text-2xl font-bold text-white" href="services.html">Services</a>
+        <a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
+        <a class="text-2xl font-bold text-white" href="galary.html">Gallery</a>
+        <a class="text-2xl font-bold text-white" href="login.html">Login</a>
+        <a class="text-2xl font-bold text-white" href="register.html">Register</a>
+        <a class="text-lg font-semibold text-primary" href="forgot.html">Forgot Password</a>
+      </nav>
+    </div>
+  </div>
+  <main class="pt-20 min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-xl p-8">
+      <h1 class="text-3xl font-bold text-white mb-2 font-display">Reset Password</h1>
+      <p class="text-sm text-on-surface-variant mb-6">Enter your email and we'll send you a reset link.</p>
+      <form id="reset-form" class="space-y-4">
+        <div>
+          <label class="text-sm text-on-surface-variant mb-2 block">Email</label>
+          <input type="email" id="email" required class="w-full bg-surface-2 border border-outline-variant rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none">
+        </div>
+        <button type="submit" class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:brightness-110 transition-all">Send Reset Link</button>
         <p class="text-center text-sm text-on-surface-variant">
-          Remember your password?
-          <a href="login.html" class="text-primary hover:text-white font-semibold">Back to Login</a>
+          Remember your password? <a href="login.html" class="text-primary hover:underline">Back to Login</a>
         </p>
-      </div>
-
-      <div class="border-t border-outline-variant mt-6 pt-6">
-        <p class="text-center text-xs text-on-surface-variant">
-          © 2026 VETA COMPANY LTD. Password resets expire after 1 hour.
-        </p>
-      </div>
+        <p id="msg" class="text-sm text-center"></p>
+      </form>
     </div>
   </main>
-
-<!-- Firebase SDK - This is the real starter code -->
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-  // TODO: Replace with YOUR web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyC_YOUR_API_KEY",
-    authDomain: "your-project.firebaseapp.com",
-    projectId: "your-project-id",
-    storageBucket: "your-project.appspot.com",
-    messagingSenderId: "123456789",
-    appId: "1:123456789:web:abc123def456"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // Handle password reset
-  document.getElementById('forgotForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const status = document.getElementById('forgotStatus');
-    const resetBtn = document.getElementById('resetBtn');
-    const email = document.getElementById('email').value;
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     
-    resetBtn.disabled = true;
-    status.textContent = 'Sending secure reset link...';
-    status.classList.remove('hidden', 'text-red-400', 'text-green-400');
-    status.classList.add('text-primary');
-
-    try {
-      await sendPasswordResetEmail(auth, email);
-      status.textContent = 'Reset link sent! Check your inbox and spam folder.';
-      status.classList.remove('text-primary', 'text-red-400');
-      status.classList.add('text-green-400');
-      e.target.reset();
-      setTimeout(() => {
-        resetBtn.disabled = false;
-      }, 3000);
-    } catch (error) {
-      let message = 'Error sending reset email. Try again.';
-      if (error.code === 'auth/too-many-requests') {
-        message = 'Too many requests. Try again later.';
-      } else if (error.code === 'auth/user-not-found') {
-        // Don't reveal if user exists - security best practice
-        status.textContent = 'Reset link sent! Check your inbox and spam folder.';
-        status.classList.remove('text-primary', 'text-red-400');
-        status.classList.add('text-green-400');
-        resetBtn.disabled = false;
-        return;
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    
+    document.getElementById('reset-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('msg');
+      
+      try {
+        await sendPasswordResetEmail(auth, email);
+        msg.textContent = "Reset link sent! Check your email.";
+        msg.className = "text-green-500 text-sm text-center";
+      } catch (error) {
+        msg.textContent = error.message;
+        msg.className = "text-red-500 text-sm text-center";
       }
-      status.textContent = message;
-      status.classList.remove('text-primary', 'text-green-400');
-      status.classList.add('text-red-400');
-      resetBtn.disabled = false;
-    }
-  });
-</script>
-<!-- End Firebase SDK -->
+    });
 
+    // Mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+  </script>
 </body>
 </html>

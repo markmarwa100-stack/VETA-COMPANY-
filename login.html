@@ -1,149 +1,154 @@
  <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login | VETA COMPANY LTD</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#adc7ff", background: "#131313", surface: "#131313", "surface-1": "#121212",
-            "surface-2": "#18181b", "on-surface": "#e5e2e1", "on-surface-variant": "#a1a1aa", "outline-variant": "#414754"
-          },
-          maxWidth: { 'container': '1320px' },
-          fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | VETA COMPANY LTD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#adc7ff", tertiary: "#33d7fe", background: "#131313", surface: "#131313", "surface-1": "#121212", "surface-2": "#18181b", "on-surface": "#e5e2e1", "on-surface-variant": "#c1c6d7", "outline-variant": "#414754" }, maxWidth: { 'container': '1320px' }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] } } } }
+</script>
+<style>
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-    #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    #mobile-menu.translate-x-full { transform: translateX(100%); }
-  </style>
+  #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  #mobile-menu.translate-x-full { transform: translateX(100%); }
+  body { min-height: 100dvh; }
+</style>
 </head>
-<body class="bg-background text-on-surface">
-  <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
-    <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
-      <a href="index.html" class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
-        <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
-      </a>
-      <nav class="hidden lg:flex gap-6 items-center">
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="about.html">About</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="galary.html">Gallery</a>
-        <a class="text-primary font-semibold text-sm uppercase tracking-wider" href="login.html">Login</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <div class="hidden lg:flex items-center gap-3">
-          <a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
-          <a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
-        </div>
-        <button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
-          <span class="material-symbols-outlined text-3xl">menu</span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
-    <div class="flex flex-col h-full p-8">
-      <div class="flex justify-between items-center mb-12">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
-          <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
-        </div>
-        <button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
-          <span class="material-symbols-outlined text-3xl">close</span>
-        </button>
-      </div>
-      <nav class="flex flex-col gap-6">
-        <a class="text-2xl font-bold text-white" href="index.html">Home</a>
-        <a class="text-2xl font-bold text-white" href="about.html">About</a>
-        <a class="text-2xl font-bold text-white" href="services.html">Services</a>
-        <a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
-        <a class="text-2xl font-bold text-white" href="galary.html">Gallery</a>
-        <a class="text-lg font-semibold text-primary" href="login.html">Login</a>
-        <a class="text-2xl font-bold text-white" href="register.html">Register</a>
-        <a class="text-2xl font-bold text-white" href="forgot.html">Forgot Password</a>
-      </nav>
-    </div>
-  </div>
-  <main class="pt-20 min-h-screen flex items-center justify-center px-4">
-    <div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-xl p-8">
-      <h1 class="text-3xl font-bold text-white mb-2 font-display">Welcome Back</h1>
-      <p class="text-sm text-on-surface-variant mb-6">Sign in to your VETA account</p>
-      <form id="login-form" class="space-y-4">
-        <div>
-          <label class="text-sm text-on-surface-variant mb-2 block">Email</label>
-          <input type="email" id="email" required class="w-full bg-surface-2 border border-outline-variant rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none">
-        </div>
-        <div>
-          <label class="text-sm text-on-surface-variant mb-2 block">Password</label>
-          <input type="password" id="password" required class="w-full bg-surface-2 border border-outline-variant rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none">
-        </div>
-        <button type="submit" class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:brightness-110 transition-all">Login</button>
-        <div class="flex justify-between text-sm">
-          <a href="forgot.html" class="text-primary hover:underline">Forgot Password?</a>
-          <a href="register.html" class="text-primary hover:underline">Create Account</a>
-        </div>
-        <p id="msg" class="text-sm text-center"></p>
-      </form>
-    </div>
-  </main>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY",
-      authDomain: "veta-company.firebaseapp.com",
-      projectId: "veta-company",
-      storageBucket: "veta-company.firebasestorage.app",
-      messagingSenderId: "1064132903129",
-      appId: "1:1064132903129:web:af77587575d20937cb7ec8"
-    };
-    
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const msg = document.getElementById('msg');
-      
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        msg.textContent = "Login successful! Redirecting...";
-        msg.className = "text-green-500 text-sm text-center";
-        setTimeout(() => window.location.href = 'index.html', 1000);
-      } catch (error) {
-        msg.textContent = error.message;
-        msg.className = "text-red-500 text-sm text-center";
-      }
-    });
+<body class="bg-background text-on-surface font-sans">
+<header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
+<div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+<span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+</a>
+<nav class="hidden lg:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="gallery.html">Gallery</a>
+<a class="text-primary font-bold text-sm uppercase tracking-wider" href="login.html">Login</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="forgot.html">Forgot</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="hidden lg:flex items-center gap-3">
+<a href="login.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Login</a>
+<a href="register.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Register</a>
+</div>
+<button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
+<div class="flex flex-col h-full p-8">
+<div class="flex justify-between items-center mb-12">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+<span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+</div>
+<button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-2xl font-bold text-white" href="index.html">Home</a>
+<a class="text-2xl font-bold text-white" href="about.html">About</a>
+<a class="text-2xl font-bold text-white" href="services.html">Services</a>
+<a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
+<a class="text-2xl font-bold text-white" href="gallery.html">Gallery</a>
+<a class="text-2xl font-bold text-primary" href="login.html">Login</a>
+<a class="text-2xl font-bold text-white" href="register.html">Register</a>
+<a class="text-lg font-semibold text-on-surface-variant" href="forgot.html">Forgot Password</a>
+<div class="pt-8 flex flex-col gap-4">
+<a href="login.html" class="w-full py-4 bg-primary text-black font-bold rounded-xl text-lg text-center">Login</a>
+<a href="register.html" class="w-full py-4 border border-outline-variant text-white font-bold rounded-xl text-lg text-center">Register</a>
+</div>
+</nav>
+</div>
 
-    // Mobile menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuLinks = mobileMenu.querySelectorAll('a');
-    function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
-    function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
-    menuToggle.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    menuLinks.forEach(link => link.addEventListener('click', closeMenu));
-  </script>
+<main class="pt-24 min-h-screen flex items-center justify-center px-4">
+<div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-2xl p-8">
+<div class="text-center mb-8">
+<span class="material-symbols-outlined text-primary text-5xl">lock_person</span>
+<h1 class="text-3xl font-bold mt-4 font-display">Secure Login</h1>
+<p class="text-on-surface-variant mt-2">Access your VETA account</p>
+</div>
+<form id="login-form" class="space-y-6">
+<div>
+<label class="text-xs text-on-surface-variant block mb-2 uppercase font-semibold">EMAIL</label>
+<input class="w-full bg-[#0e0e0e] border border-outline-variant rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" id="email" placeholder="you@company.com" required type="email"/>
+</div>
+<div>
+<label class="text-xs text-on-surface-variant block mb-2 uppercase font-semibold">PASSWORD</label>
+<input class="w-full bg-[#0e0e0e] border border-outline-variant rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" id="password" placeholder="••••••••" required type="password"/>
+</div>
+<button class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all" type="submit">LOGIN</button>
+</form>
+<div class="mt-6 text-center text-sm">
+<a class="text-primary hover:underline" href="forgot.html">Forgot Password?</a>
+<p class="text-on-surface-variant mt-4">No account? <a class="text-primary hover:underline" href="register.html">Register</a></p>
+</div>
+<p id="message" class="mt-4 text-center text-sm"></p>
+</div>
+</main>
+
+<footer class="bg-black border-t border-outline-variant/20 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 max-w-container mx-auto gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">engineering</span>
+<span class="text-lg font-bold text-primary tracking-tighter font-display">VETA</span>
+</div>
+<p class="text-xs text-on-surface-variant">© 2026 VETA COMPANY LTD. All rights reserved.</p>
+</div>
+</footer>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
+  menuToggle.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  const firebaseConfig = { apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY", authDomain: "veta-company.firebaseapp.com", projectId: "veta-company", storageBucket: "veta-company.firebasestorage.app", messagingSenderId: "1064132903129", appId: "1:1064132903129:web:af77587575d20937cb7ec8" };
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const form = document.getElementById('login-form');
+  const message = document.getElementById('message');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    message.textContent = 'Logging in...';
+    message.className = 'mt-4 text-center text-sm text-primary';
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      message.textContent = 'Login successful! Redirecting...';
+      message.className = 'mt-4 text-center text-sm text-green-400';
+      setTimeout(() => window.location.href = 'index.html', 1500);
+    } catch (error) {
+      message.textContent = error.message;
+      message.className = 'mt-4 text-center text-sm text-red-400';
+    }
+  });
+  onAuthStateChanged(auth, (user) => {
+    const loginBtns = document.querySelectorAll('a[href="login.html"]');
+    const registerBtns = document.querySelectorAll('a[href="register.html"]');
+    if (user) {
+      loginBtns.forEach(btn => { btn.textContent = 'Logout'; btn.href = '#'; btn.onclick = (e) => { e.preventDefault(); signOut(auth).then(() => window.location.href = 'index.html'); }; });
+      registerBtns.forEach(btn => { btn.textContent = user.email.split('@')[0]; btn.href = '#'; btn.className = btn.className.replace('bg-primary text-black', 'border border-primary text-primary'); });
+    }
+  });
+</script>
 </body>
 </html>

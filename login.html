@@ -24,7 +24,7 @@
   </script>
   <style>
     body { font-family: 'Inter', sans-serif; }
- .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     #mobile-menu.translate-x-full { transform: translateX(100%); }
   </style>
@@ -42,13 +42,13 @@
         <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="galary.html">Gallery</a>
-        <a class="text-primary font-bold text-sm uppercase tracking-wider" href="login.html">Login</a>
+        <a class="text-primary font-semibold text-sm uppercase tracking-wider" href="login.html">Login</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
       </nav>
       <div class="flex items-center gap-3">
         <div class="hidden lg:flex items-center gap-3">
-          <a href="login.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Login</a>
-          <a href="register.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Register</a>
+          <a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
+          <a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
         </div>
         <button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
           <span class="material-symbols-outlined text-3xl">menu</span>
@@ -73,15 +73,16 @@
         <a class="text-2xl font-bold text-white" href="services.html">Services</a>
         <a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
         <a class="text-2xl font-bold text-white" href="galary.html">Gallery</a>
-        <a class="text-2xl font-bold text-primary" href="login.html">Login</a>
+        <a class="text-lg font-semibold text-primary" href="login.html">Login</a>
         <a class="text-2xl font-bold text-white" href="register.html">Register</a>
-        <a class="text-lg font-semibold text-on-surface-variant" href="forgot.html">Forgot Password</a>
+        <a class="text-2xl font-bold text-white" href="forgot.html">Forgot Password</a>
       </nav>
     </div>
   </div>
   <main class="pt-20 min-h-screen flex items-center justify-center px-4">
     <div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-xl p-8">
-      <h1 class="text-3xl font-bold text-white mb-6 font-display">Login</h1>
+      <h1 class="text-3xl font-bold text-white mb-2 font-display">Welcome Back</h1>
+      <p class="text-sm text-on-surface-variant mb-6">Sign in to your VETA account</p>
       <form id="login-form" class="space-y-4">
         <div>
           <label class="text-sm text-on-surface-variant mb-2 block">Email</label>
@@ -92,11 +93,11 @@
           <input type="password" id="password" required class="w-full bg-surface-2 border border-outline-variant rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none">
         </div>
         <button type="submit" class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:brightness-110 transition-all">Login</button>
-        <p class="text-center text-sm text-on-surface-variant">
-          Don't have an account? <a href="register.html" class="text-primary hover:underline">Register</a><br>
+        <div class="flex justify-between text-sm">
           <a href="forgot.html" class="text-primary hover:underline">Forgot Password?</a>
-        </p>
-        <p id="error-msg" class="text-red-500 text-sm text-center"></p>
+          <a href="register.html" class="text-primary hover:underline">Create Account</a>
+        </div>
+        <p id="msg" class="text-sm text-center"></p>
       </form>
     </div>
   </main>
@@ -105,12 +106,12 @@
     import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
+      apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY",
+      authDomain: "veta-company.firebaseapp.com",
+      projectId: "veta-company",
+      storageBucket: "veta-company.firebasestorage.app",
+      messagingSenderId: "1064132903129",
+      appId: "1:1064132903129:web:af77587575d20937cb7ec8"
     };
     
     const app = initializeApp(firebaseConfig);
@@ -120,13 +121,16 @@
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      const errorMsg = document.getElementById('error-msg');
+      const msg = document.getElementById('msg');
       
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = 'index.html';
+        msg.textContent = "Login successful! Redirecting...";
+        msg.className = "text-green-500 text-sm text-center";
+        setTimeout(() => window.location.href = 'index.html', 1000);
       } catch (error) {
-        errorMsg.textContent = error.message;
+        msg.textContent = error.message;
+        msg.className = "text-red-500 text-sm text-center";
       }
     });
 

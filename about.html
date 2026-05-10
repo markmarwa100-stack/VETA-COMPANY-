@@ -1,300 +1,140 @@
  <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | VETA COMPANY LTD</title>
-  <meta name="description" content="Learn about VETA COMPANY LTD - engineering the future through precision, technical excellence, and uncompromising security standards.">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#adc7ff", tertiary: "#33d7fe", background: "#131313", surface: "#131313", "surface-1": "#121212",
-            "surface-2": "#18181b", "on-surface": "#e5e2e1", "on-surface-variant": "#c1c6d7", "outline-variant": "#414754"
-          },
-          maxWidth: { 'container': '1320px' },
-          fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | VETA COMPANY LTD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#adc7ff", tertiary: "#33d7fe", background: "#131313", surface: "#131313", "surface-1": "#121212", "surface-2": "#18181b", "on-surface": "#e5e2e1", "on-surface-variant": "#c1c6d7", "outline-variant": "#414754" }, maxWidth: { 'container': '1320px' }, fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] } } } }
+</script>
+<style>
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-    #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    #mobile-menu.translate-x-full { transform: translateX(100%); }
-    body { min-height: 100dvh; }
-  </style>
+  #mobile-menu { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  #mobile-menu.translate-x-full { transform: translateX(100%); }
+  body { min-height: 100dvh; }
+.hero-pattern { background-image: radial-gradient(circle at 2px 2px, #1e1e1e 1px, transparent 0); background-size: 40px 40px; }
+</style>
 </head>
-<body class="bg-background text-on-surface font-sans selection:bg-primary/30 selection:text-white">
-  <!-- NEW HEADER -->
-  <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
-    <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
-      <a href="index.html" class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
-        <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
-      </a>
-      <nav class="hidden lg:flex gap-6 items-center">
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
-        <a class="text-primary font-bold text-sm uppercase tracking-wider" href="about.html">About</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="galary.html">Gallery</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="login.html">Login</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <div class="hidden lg:flex items-center gap-3">
-          <a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
-          <a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
-        </div>
-        <button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
-          <span class="material-symbols-outlined text-3xl">menu</span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <!-- NEW MOBILE MENU -->
-  <div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
-    <div class="flex flex-col h-full p-8">
-      <div class="flex justify-between items-center mb-12">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-2xl">engineering</span>
-          <span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
-        </div>
-        <button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
-          <span class="material-symbols-outlined text-3xl">close</span>
-        </button>
-      </div>
-      <nav class="flex flex-col gap-6">
-        <a class="text-2xl font-bold text-white" href="index.html">Home</a>
-        <a class="text-2xl font-bold text-primary" href="about.html">About</a>
-        <a class="text-2xl font-bold text-white" href="services.html">Services</a>
-        <a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
-        <a class="text-2xl font-bold text-white" href="galary.html">Gallery</a>
-        <a class="text-2xl font-bold text-white" href="login.html">Login</a>
-        <a class="text-2xl font-bold text-white" href="register.html">Register</a>
-        <a class="text-lg font-semibold text-on-surface-variant" href="forgot.html">Forgot Password</a>
-        <div class="pt-8 flex flex-col gap-4">
-          <a href="login.html" class="w-full py-4 bg-primary text-black font-bold rounded-xl text-lg text-center">Login</a>
-          <a href="register.html" class="w-full py-4 border border-outline-variant text-white font-bold rounded-xl text-lg text-center">Register</a>
-        </div>
-      </nav>
-    </div>
-  </div>
+<body class="bg-background text-on-surface font-sans">
+<!-- HEADER: Same as index.html -->
+<header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-outline-variant/50">
+<div class="flex justify-between items-center w-full px-4 md:px-8 py-3 max-w-container mx-auto">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+<span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+</a>
+<nav class="hidden lg:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="index.html">Home</a>
+<a class="text-primary font-bold text-sm uppercase tracking-wider" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="contact.html">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="login.html">Login</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="register.html">Register</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-wider" href="forgot.html">Forgot</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="hidden lg:flex items-center gap-3">
+<a href="login.html" class="px-5 py-1.5 border border-primary text-primary font-bold rounded text-sm hover:bg-primary/10 transition-all">Login</a>
+<a href="register.html" class="px-5 py-1.5 bg-primary text-black font-bold rounded text-sm hover:brightness-110 transition-all">Register</a>
+</div>
+<button class="lg:hidden p-2 text-on-surface hover:text-primary" id="menu-toggle" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- MOBILE MENU: Same as index.html -->
+<div class="fixed inset-0 z-[60] bg-black translate-x-full lg:hidden" id="mobile-menu">
+<div class="flex flex-col h-full p-8">
+<div class="flex justify-between items-center mb-12">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+<span class="text-xl font-bold text-primary tracking-tighter font-display">VETA</span>
+</div>
+<button class="p-2 text-on-surface hover:text-primary" id="menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-2xl font-bold text-white" href="index.html">Home</a>
+<a class="text-2xl font-bold text-primary" href="about.html">About</a>
+<a class="text-2xl font-bold text-white" href="services.html">Services</a>
+<a class="text-2xl font-bold text-white" href="contact.html">Contact</a>
+<a class="text-2xl font-bold text-white" href="gallery.html">Gallery</a>
+<a class="text-2xl font-bold text-white" href="login.html">Login</a>
+<a class="text-2xl font-bold text-white" href="register.html">Register</a>
+<a class="text-lg font-semibold text-on-surface-variant" href="forgot.html">Forgot Password</a>
+<div class="pt-8 flex flex-col gap-4">
+<a href="login.html" class="w-full py-4 bg-primary text-black font-bold rounded-xl text-lg text-center">Login</a>
+<a href="register.html" class="w-full py-4 border border-outline-variant text-white font-bold rounded-xl text-lg text-center">Register</a>
+</div>
+</nav>
+</div>
 
-  <!-- YOUR ORIGINAL CONTENT STARTS HERE - UNCHANGED -->
-  <main class="pt-24">
-    <!-- Hero Section -->
-    <section class="relative min-h-[600px] flex items-center overflow-hidden px-4 md:px-8">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10"></div>
-        <img class="w-full h-full object-cover grayscale opacity-30" alt="A sophisticated industrial engineering environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGvZ5PN1u_YYhJJGpgX_6ePLH90PyzeAkEOp8oPfDkoCDMPWCFyNb-i-E--CTBBi23xKy_-kS06Ewa-hNt5--t3Kw_fnLDJ6HMEGO5F35fGAb6qW0LpgM6sGGgn-5PM7ZeoX5oicRNQf6AjBh2VMvOmFtloO000p2J4Mt3v6XNUej90Ci6wbzR3HDzxXnKGUpw1lW27aFmEY9K-Lu-wS4P0a3FQZsrQVZk_zl5tTcXCQ7VSHRAjAA62Q99PztSWlQDTJ0YoMEeyVdW" loading="eager"/>
-      </div>
-      <div class="relative z-20 max-w-container mx-auto w-full">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 border border-primary/30 rounded-full mb-8">
-            <span class="material-symbols-outlined text-lg text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
-            <span class="text-sm text-primary uppercase font-semibold">Secure Infrastructure Certified</span>
-          </div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-on-surface font-display">About VETA COMPANY LTD</h1>
-          <p class="text-lg text-on-surface-variant mb-10 leading-relaxed max-w-2xl">
-            Engineering the future through precision, technical excellence, and uncompromising security standards. Our mission is to provide robust infrastructure solutions that empower global innovation.
-          </p>
-          <div class="flex gap-4">
-            <a href="services.html" class="bg-primary text-black px-8 py-4 font-bold rounded shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all">View Our Capabilities</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<main class="pt-24">
+<section class="hero-pattern relative py-24 overflow-hidden border-b border-outline-variant">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/90"></div>
+<div class="max-w-container mx-auto px-4 md:px-8 relative z-10">
+<h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">About VETA COMPANY LTD</h1>
+<p class="text-lg text-on-surface-variant max-w-3xl">Founded in Tanga, Tanzania. We deliver precision engineering and secure technology solutions for critical infrastructure.</p>
+</div>
+</section>
+<section class="max-w-container mx-auto px-4 md:px-8 py-24">
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h2 class="text-2xl font-bold mb-4 font-display">Our Mission</h2>
+<p class="text-on-surface-variant">To provide world-class engineering services that power Tanzania's growth while maintaining the highest security standards.</p>
+</div>
+<div>
+<h2 class="text-2xl font-bold mb-4 font-display">Our Vision</h2>
+<p class="text-on-surface-variant">To be East Africa's most trusted engineering and technology partner by 2030.</p>
+</div>
+</section>
+</main>
 
-    <!-- Company Story -->
-    <section class="py-24 px-4 md:px-8 max-w-container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div class="md:col-span-8 bg-surface-1 border border-outline-variant p-12 rounded-2xl shadow-2xl">
-          <h2 class="text-3xl font-bold mb-8 text-primary font-display">Our Origins</h2>
-          <p class="text-lg text-on-surface-variant mb-6 leading-relaxed">
-            Founded in the heart of the technological revolution, VETA COMPANY LTD emerged from a vision to bridge the gap between complex engineering challenges and secure, scalable solutions. What started as a focused consultancy has evolved into a full-scale engineering powerhouse, serving critical infrastructure needs across multiple continents.
-          </p>
-          <p class="text-lg text-on-surface-variant leading-relaxed">
-            Our journey is defined by a relentless pursuit of technical perfection. We don't just build systems; we engineer trust. Every line of code, every hardware component, and every strategic plan is scrutinized through our rigorous security-first framework.
-          </p>
-        </div>
-        <div class="md:col-span-4 grid grid-rows-2 gap-8">
-          <div class="bg-surface-1 border border-outline-variant p-10 rounded-2xl flex flex-col justify-center border-t-4 border-t-primary shadow-xl">
-            <h3 class="text-2xl font-semibold mb-4 text-on-surface font-display">Mission</h3>
-            <p class="text-base text-on-surface-variant leading-relaxed">To deliver world-class engineering solutions that set the benchmark for security and reliability.</p>
-          </div>
-          <div class="bg-surface-1 border border-outline-variant p-10 rounded-2xl flex flex-col justify-center shadow-xl">
-            <h3 class="text-2xl font-semibold mb-4 text-on-surface font-display">Vision</h3>
-            <p class="text-base text-on-surface-variant leading-relaxed">To be the global anchor for secure infrastructure in an increasingly digital world.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="py-24 bg-black relative overflow-hidden">
-      <div class="absolute inset-0 bg-primary/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none"></div>
-      <div class="max-w-container mx-auto px-4 md:px-8 relative z-10">
-        <div class="text-center mb-20">
-          <h2 class="text-3xl font-bold mb-6 font-display">The VETA Standard</h2>
-          <div class="h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-surface-1 p-10 border border-outline-variant rounded-xl hover:border-primary/50 hover:bg-zinc-900/50 transition-all duration-300 group shadow-lg">
-            <span class="material-symbols-outlined text-5xl text-primary mb-8 group-hover:scale-110 transition-transform">lightbulb</span>
-            <h4 class="text-2xl font-semibold mb-4 font-display">Innovation</h4>
-            <p class="text-base text-on-surface-variant">Cutting-edge methodologies applied to traditional engineering bottlenecks.</p>
-          </div>
-          <div class="bg-surface-1 p-10 border border-outline-variant rounded-xl hover:border-primary/50 hover:bg-zinc-900/50 transition-all duration-300 group shadow-lg">
-            <span class="material-symbols-outlined text-5xl text-primary mb-8 group-hover:scale-110 transition-transform">verified</span>
-            <h4 class="text-2xl font-semibold mb-4 font-display">Reliability</h4>
-            <p class="text-base text-on-surface-variant">Proven track record of 99.9% uptime for mission-critical deployments.</p>
-          </div>
-          <div class="bg-surface-1 p-10 border border-outline-variant rounded-xl hover:border-primary/50 hover:bg-zinc-900/50 transition-all duration-300 group shadow-lg">
-            <span class="material-symbols-outlined text-5xl text-primary mb-8 group-hover:scale-110 transition-transform">admin_panel_settings</span>
-            <h4 class="text-2xl font-semibold mb-4 font-display">Security</h4>
-            <p class="text-base text-on-surface-variant">Multi-layered security protocols integrated into the very core of our designs.</p>
-          </div>
-          <div class="bg-surface-1 p-10 border border-outline-variant rounded-xl hover:border-primary/50 hover:bg-zinc-900/50 transition-all duration-300 group shadow-lg">
-            <span class="material-symbols-outlined text-5xl text-primary mb-8 group-hover:scale-110 transition-transform">workspace_premium</span>
-            <h4 class="text-2xl font-semibold mb-4 font-display">Professionalism</h4>
-            <p class="text-base text-on-surface-variant">Unparalleled technical support and dedicated project management.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-24 px-4 md:px-8 max-w-container mx-auto">
-      <h2 class="text-3xl font-bold mb-16 text-center font-display">Engineering Leadership</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="bg-surface-1 rounded-2xl overflow-hidden border border-outline-variant hover:border-primary/50 transition-all duration-500 shadow-xl group">
-          <div class="relative overflow-hidden">
-            <img class="w-full h-96 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Dr. Alistair Vance, CEO" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQfLY7to7zr3WmlG3vXPgkN4xBi4fopo2bwG_RKDatcxuCyeB704gxvAfDfLsZUB1fTjqTRTXltxHk3IPGMJVR-ay3LvgbRJLC6KPbStPBvoZQPqhondtrmQZevPQ3WfWYqf-WUrBREhJ7-RU6_reyivFGJ6joKhpPngMPchQJtGm2knkYye5l2Tqur8KYSzdvCE9Y7c6ncXivFB1j5R_tnvDKdcvOn6Eplb4MA1ACMC9HBnWtcM_NFLTMphbGk2kLxHa9CyQlMGiW" loading="lazy"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-          </div>
-          <div class="p-10 relative">
-            <h4 class="text-2xl font-semibold text-on-surface mb-1 font-display">Dr. Alistair Vance</h4>
-            <p class="text-primary text-sm uppercase tracking-widest font-bold mb-6">Chief Executive Officer</p>
-            <p class="text-on-surface-variant text-base leading-relaxed">Visionary strategist with 20+ years in international engineering and systems architecture.</p>
-          </div>
-        </div>
-        <div class="bg-surface-1 rounded-2xl overflow-hidden border border-outline-variant hover:border-primary/50 transition-all duration-500 shadow-xl group">
-          <div class="relative overflow-hidden">
-            <img class="w-full h-96 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Sarah Chen, CTO" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAltTbG4aW8lMXkkrl2Ai-BH7Xp88Sl27U8qRJqz3jRkmMnQIx57TsgxaKbkXpedfn6o-W3vNrCkaA87gltTGe9WEWfyipMP71RQpZlrhaiUX-7mP69NTLpJlDfJAO6uWiQR8wMRR0sroIrI39lMrWv79gCKJIBuK1CaAzC2aL1lBk6rIAKPkuBrWv5UQWHuCHgylu3Zvip5tqGiewWycRRW0z4uPUBq3b5m508aZe9wyBV6k9M_ZrLiwN8YchvqtcxRAzeQTHDDnpo" loading="lazy"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-          </div>
-          <div class="p-10 relative">
-            <h4 class="text-2xl font-semibold text-on-surface mb-1 font-display">Sarah Chen</h4>
-            <p class="text-primary text-sm uppercase tracking-widest font-bold mb-6">Chief Technology Officer</p>
-            <p class="text-on-surface-variant text-base leading-relaxed">Pioneer in secure cloud frameworks and distributed computing infrastructures.</p>
-          </div>
-        </div>
-        <div class="bg-surface-1 rounded-2xl overflow-hidden border border-outline-variant hover:border-primary/50 transition-all duration-500 shadow-xl group">
-          <div class="relative overflow-hidden">
-            <img class="w-full h-96 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Marcus Thorne, Head of Engineering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKYNVC2c0PdBtBfZzkLoW4NUwcj84FofCj531OTeoVXKI-O78hN8sGbNGjQlXcbIA7RPNez6654HdCo25DTahDmP6yXPebONiJ8crJjLYPKpMhilOYqNFYs8xMhNqyTr8KP0b7iV80eaJoeBY5gX7pSaCB0CTrK_4re9LyrbDnBkxO7ucP0HaZku45W8JgAlNYh7UX3bvUSqd5y09W01KzBBo7m20daktagv72zTuZQwS3JJBZiLlO8jq7BOOcKl73l8lyNWRP6Y6d" loading="lazy"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-          </div>
-          <div class="p-10 relative">
-            <h4 class="text-2xl font-semibold text-on-surface mb-1 font-display">Marcus Thorne</h4>
-            <p class="text-primary text-sm uppercase tracking-widest font-bold mb-6">Head of Engineering</p>
-            <p class="text-on-surface-variant text-base leading-relaxed">Specialist in structural integrity and mission-critical hardware implementation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-24 px-4 md:px-8">
-      <div class="max-w-container mx-auto bg-primary text-black p-16 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl shadow-primary/30 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-black/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-        <div class="relative z-10">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight font-display">Ready to Secure Your Future?</h2>
-          <p class="text-lg opacity-90 max-w-xl leading-relaxed">Join the ranks of industry leaders who trust VETA COMPANY LTD for their most critical engineering challenges. All communications are sanitized and encrypted.</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-6 relative z-10 w-full md:w-auto">
-          <a href="contact.html" class="bg-black text-primary px-10 py-5 font-bold rounded-xl shadow-2xl hover:bg-zinc-900 transition-all text-center">Contact Expert Team</a>
-          <a href="services.html" class="border-2 border-black px-10 py-5 font-bold rounded-xl hover:bg-black/10 transition-all text-center">Download Specs</a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- YOUR ORIGINAL CONTENT ENDS HERE -->
-
-  <!-- NEW FOOTER -->
-  <footer class="bg-black border-t border-outline-variant/20 py-8">
-    <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 max-w-container mx-auto gap-6">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary text-xl">engineering</span>
-        <span class="text-lg font-bold text-primary tracking-tighter font-display">VETA</span>
-      </div>
-      <p class="text-xs text-on-surface-variant">© 2026 VETA COMPANY LTD. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy</a>
-        <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
-        <a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuLinks = mobileMenu.querySelectorAll('a');
-    function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
-    function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
-    menuToggle.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    menuLinks.forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' &&!mobileMenu.classList.contains('translate-x-full')) closeMenu();
-    });
-  </script>
-
-  <!-- FIREBASE AUTH SCRIPT FOR SMART HEADER -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY",
-      authDomain: "veta-company.firebaseapp.com",
-      projectId: "veta-company",
-      storageBucket: "veta-company.firebasestorage.app",
-      messagingSenderId: "1064132903129",
-      appId: "1:1064132903129:web:af77587575d20937cb7ec8"
-    };
-    
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    
-    onAuthStateChanged(auth, (user) => {
-      const loginBtns = document.querySelectorAll('a[href="login.html"]');
-      const registerBtns = document.querySelectorAll('a[href="register.html"]');
-      
-      if (user) {
-        loginBtns.forEach(btn => {
-          btn.textContent = 'Logout';
-          btn.href = '#';
-          btn.onclick = (e) => {
-            e.preventDefault();
-            signOut(auth).then(() => window.location.href = 'index.html');
-          };
-        });
-        registerBtns.forEach(btn => {
-          btn.textContent = user.email.split('@')[0];
-          btn.href = '#';
-          btn.className = btn.className.replace('bg-primary text-black', 'border border-primary text-primary');
-        });
-      }
-    });
-  </script>
+<!-- FOOTER: Same as index.html -->
+<footer class="bg-black border-t border-outline-variant/20 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 max-w-container mx-auto gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">engineering</span>
+<span class="text-lg font-bold text-primary tracking-tighter font-display">VETA</span>
+</div>
+<p class="text-xs text-on-surface-variant">© 2026 VETA COMPANY LTD. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy</a>
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="terms.html">Terms</a>
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+</div>
+</footer>
+<!-- SCRIPTS: Same as index.html -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  function openMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = ''; }
+  menuToggle.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  const firebaseConfig = { apiKey: "AIzaSyCvbcDP7qWHFYewEUTPzbCrBb7LEv8qZBY", authDomain: "veta-company.firebaseapp.com", projectId: "veta-company", storageBucket: "veta-company.firebasestorage.app", messagingSenderId: "1064132903129", appId: "1:1064132903129:web:af77587575d20937cb7ec8" };
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  onAuthStateChanged(auth, (user) => {
+    const loginBtns = document.querySelectorAll('a[href="login.html"]');
+    const registerBtns = document.querySelectorAll('a[href="register.html"]');
+    if (user) {
+      loginBtns.forEach(btn => { btn.textContent = 'Logout'; btn.href = '#'; btn.onclick = (e) => { e.preventDefault(); signOut(auth).then(() => window.location.href = 'index.html'); }; });
+      registerBtns.forEach(btn => { btn.textContent = user.email.split('@')[0]; btn.href = '#'; btn.className = btn.className.replace('bg-primary text-black', 'border border-primary text-primary'); });
+    }
+  });
+</script>
 </body>
 </html>

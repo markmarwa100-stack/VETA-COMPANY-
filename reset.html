@@ -110,3 +110,131 @@ p{
 
 </body>
 </html>
+  <!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forgot Password | VETA COMPANY LTD</title>
+<meta name="description" content="Reset your VETA COMPANY LTD account password securely.">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#adc7ff",
+          background: "#131313",
+          surface: "#131313",
+          "surface-1": "#121212",
+          "on-surface": "#e5e2e1",
+          "on-surface-variant": "#a1a1aa",
+          "outline-variant": "#414754"
+        },
+        maxWidth: {
+          'container': '1320px'
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          display: ['Space Grotesk', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  .form-control {
+    background: #111827 !important;
+    border: 1px solid #414754 !important;
+    color: #e5e2e1 !important;
+    height: 50px;
+  }
+  .form-control:focus {
+    background: #111827 !important;
+    color: #e5e2e1 !important;
+    border-color: #adc7ff !important;
+    box-shadow: 0 0 0 1px #adc7ff !important;
+  }
+</style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+  <!-- TopNavBar - matches rest of site -->
+  <header class="w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-container mx-auto">
+      <a href="index.html" class="text-xl font-bold text-primary tracking-tight font-display">VETA COMPANY LTD</a>
+      <div class="flex items-center gap-6">
+        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="login.html">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Forgot Password Form -->
+  <main class="flex-grow flex items-center justify-center px-4 py-12">
+    <div class="w-full max-w-md bg-surface-1 border border-outline-variant rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-primary mb-3 font-display">Forgot Password</h1>
+        <p class="text-on-surface-variant text-sm">
+          Enter your email address and we'll send you a secure reset link.
+        </p>
+      </div>
+
+      <form id="forgotForm" class="space-y-6">
+        <div>
+          <label class="block text-sm text-on-surface-variant mb-2 uppercase tracking-wider font-semibold">Email Address</label>
+          <input type="email" id="email" class="form-control w-full rounded-lg px-4" placeholder="you@company.com" required>
+        </div>
+
+        <button type="submit" class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:bg-opacity-90 active:scale-[0.98] transition-all">
+          Send Reset Link
+        </button>
+
+        <p id="forgotStatus" class="text-sm text-center hidden"></p>
+      </form>
+
+      <div class="border-t border-outline-variant mt-8 pt-6">
+        <p class="text-center text-sm text-on-surface-variant">
+          Remember your password?
+          <a href="login.html" class="text-primary hover:text-white font-semibold">Back to Login</a>
+        </p>
+      </div>
+
+      <div class="border-t border-outline-variant mt-6 pt-6">
+        <p class="text-center text-xs text-on-surface-variant">
+          © 2026 VETA COMPANY LTD. Password resets expire after 1 hour.
+        </p>
+      </div>
+    </div>
+  </main>
+
+<script>
+document.getElementById('forgotForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const status = document.getElementById('forgotStatus');
+  const email = document.getElementById('email').value;
+  
+  status.textContent = 'Sending secure reset link...';
+  status.classList.remove('hidden', 'text-red-400');
+  status.classList.add('text-primary');
+  
+  // Simulate API call - replace with Firebase sendPasswordResetEmail
+  setTimeout(() => {
+    status.textContent = 'If an account exists for ' + email + ', a reset link has been sent. Check your inbox and spam folder.';
+    status.classList.remove('text-primary');
+    status.classList.add('text-green-400');
+    this.reset();
+  }, 1500);
+});
+</script>
+
+</body>
+</html>

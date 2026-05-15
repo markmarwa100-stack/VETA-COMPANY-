@@ -1,240 +1,200 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VETA | News</title>
+<style>
+body {
+  margin:0;
+  padding:0;
+  background:#111415;
+  color:#e1e3e4;
+  font-family:Arial,sans-serif;
+}
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  background:#191c1d;
+  border-bottom:1px solid #4c4546;
+  padding:12px 16px;
+}
+.nav-wrap {
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo {
+  color:#c6c6c6;
+  font-weight:bold;
+  font-size:20px;
+}
+nav a {
+  color:#cfc4c5;
+  text-decoration:none;
+  margin:0 10px;
+  font-size:14px;
+}
+nav a.active {
+  color:#adc7ff;
+  font-weight:bold;
+}
+main {
+  padding-top:80px;
+  padding-bottom:40px;
+}
+section {
+  padding:40px 16px;
+  max-width:1000px;
+  margin:0 auto;
+}
+.hero {
+  position:relative;
+  width:100%;
+  height:400px;
+  overflow:hidden;
+}
+.hero img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-overlay {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:24px;
+  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+}
+.badge {
+  display:inline-block;
+  background:#007BFF;
+  color:#ffffff;
+  padding:4px 8px;
+  font-size:12px;
+  margin-bottom:8px;
+}
+h1 {
+  font-size:28px;
+  font-weight:bold;
+  color:#ffffff;
+  margin:0 0 8px 0;
+}
+h3 {
+  font-size:20px;
+  font-weight:bold;
+  color:#e1e3e4;
+  margin:0 0 8px 0;
+}
+p {
+  color:#cfc4c5;
+  font-size:14px;
+  margin:0;
+}
+.article {
+  display:flex;
+  gap:16px;
+  border-bottom:1px solid #4c4546;
+  padding-bottom:24px;
+  margin-bottom:24px;
+}
+.article img {
+  width:96px;
+  height:96px;
+  object-fit:cover;
+  filter:grayscale(100%) brightness(75%) contrast(125%);
+}
+.tag {
+  color:#007BFF;
+  font-size:12px;
+  font-weight:bold;
+  display:block;
+  margin-bottom:4px;
+}
+footer {
+  background:#0c0f10;
+  border-top:1px solid #4c4546;
+  padding:32px 16px;
+  text-align:center;
+  font-size:12px;
+  color:#988e90;
+}
+</style>
+</head>
+<body>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-container": "#1d2021",
-                    "on-error": "#690005",
-                    "error": "#ffb4ab",
-                    "tertiary-fixed-dim": "#adc7ff",
-                    "surface-container-lowest": "#0c0f10",
-                    "secondary-fixed-dim": "#bfc2ff",
-                    "primary-container": "#000000",
-                    "on-tertiary-fixed-variant": "#004493",
-                    "on-secondary-container": "#a9afff",
-                    "inverse-on-surface": "#2e3132",
-                    "surface-bright": "#373a3b",
-                    "on-surface": "#e1e3e4",
-                    "background": "#111415",
-                    "secondary-container": "#3239a3",
-                    "secondary-fixed": "#e0e0ff",
-                    "surface-container-high": "#282a2b",
-                    "on-secondary-fixed-variant": "#3239a3",
-                    "on-primary-container": "#757575",
-                    "secondary": "#bfc2ff",
-                    "surface-tint": "#c6c6c6",
-                    "primary-fixed": "#e2e2e2",
-                    "surface-container-low": "#191c1d",
-                    "surface": "#111415",
-                    "on-tertiary-fixed": "#001a41",
-                    "tertiary": "#adc7ff",
-                    "surface-container-highest": "#323536",
-                    "on-surface-variant": "#cfc4c5",
-                    "on-primary": "#303030",
-                    "on-primary-fixed": "#1b1b1b",
-                    "primary-fixed-dim": "#c6c6c6",
-                    "primary": "#c6c6c6",
-                    "on-tertiary": "#002e68",
-                    "tertiary-fixed": "#d8e2ff",
-                    "tertiary-container": "#000000",
-                    "on-background": "#e1e3e4",
-                    "surface-variant": "#323536",
-                    "on-tertiary-container": "#0071eb",
-                    "on-secondary": "#181d8c",
-                    "on-secondary-fixed": "#00006e",
-                    "error-container": "#93000a",
-                    "outline": "#988e90",
-                    "surface-dim": "#111415",
-                    "inverse-surface": "#e1e3e4",
-                    "on-error-container": "#ffdad6",
-                    "outline-variant": "#4c4546",
-                    "inverse-primary": "#5e5e5e",
-                    "on-primary-fixed-variant": "#474747"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "xs": "4px",
-                    "xl": "80px",
-                    "margin-desktop": "64px",
-                    "sm": "12px",
-                    "base": "8px",
-                    "lg": "48px",
-                    "gutter": "24px",
-                    "margin-mobile": "16px",
-                    "md": "24px"
-            },
-            "fontFamily": {
-                    "body-md": ["Inter"],
-                    "label-md": ["JetBrains Mono"],
-                    "display-lg": ["Inter"],
-                    "headline-lg": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "display-lg-mobile": ["Inter"],
-                    "caption": ["Inter"],
-                    "headline-lg-mobile": ["Inter"]
-            },
-            "fontSize": {
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .glass-card {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background text-on-background font-body-md selection:bg-on-tertiary-container selection:text-white">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 bg-background/80 backdrop-blur-md border-b border-outline-variant">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70" data-icon="menu">menu</span>
-<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background">VETA</span>
-</div>
-<div class="flex items-center">
-<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70" data-icon="search">search</span>
+<header>
+<div class="nav-wrap">
+<div class="logo">VETA</div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="services.html">SERVICES</a>
+<a href="gallery.html">GALLERY</a>
+<a href="support.html">SUPPORT</a>
+<a href="career.html">CAREER</a>
+<a href="contact.html">CONTACT</a>
+</nav>
 </div>
 </header>
-<main class="pt-16 pb-24">
-<!-- Featured News Hero -->
-<section class="px-margin-mobile pt-md">
-<div class="relative w-full aspect-[4/5] rounded-none overflow-hidden group cursor-pointer">
-<img alt="Global Expansion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic low-angle shot of a sleek, glass-fronted corporate skyscraper reflecting a deep blue twilight sky. The architecture is sharp and modern, representing digital authority and global expansion. The lighting is dramatic, with cold blue tones and high-contrast shadows, emphasizing a premium and secure corporate environment. Minimalist and powerful composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKVuDAbbbJfKLt4xlNljM_KLFTH_fI_ixtmBkzTV7O1X9xdMwlLj5L1LOwtI0hChBVTnW2uELYY4FzhMC8Hkeo-h5Rubh0DOAkmMEet17K6KB9Wx6XsRZ_1-nn2bT3l7vBGg9Ut6CdA8om4mp3Wc27G8x8uQ-yiXRkj7kKANql8X9y-yJqThGZdHGmaxHF-INlxRbKahU5yn9qb7BY7AnovdHqmTdaev820l55OT8mh9r6dnSAwvJ8fURWm0qmw60LUdvFvNxnA90"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-<div class="absolute inset-0 bg-[#000080]/20 mix-blend-multiply"></div>
-<div class="absolute bottom-0 left-0 p-md w-full">
-<span class="inline-block bg-[#007BFF] text-white px-2 py-1 font-label-md text-label-md mb-sm">CORPORATE</span>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white font-bold mb-xs leading-tight">VETA Announces Global Expansion</h1>
-<p class="font-caption text-caption text-on-surface-variant opacity-80">2 hours ago • 4 min read</p>
-</div>
+
+<main>
+
+<section class="hero">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKVuDAbbbJfKLt4xlNljM_KLFTH_fI_ixtmBkzTV7O1X9xdMwlLj5L1LOwtI0hChBVTnW2uELYY4FzhMC8Hkeo-h5Rubh0DOAkmMEet17K6KB9Wx6XsRZ_1-nn2bT3l7vBGg9Ut6CdA8om4mp3Wc27G8x8uQ-yiXRkj7kKANql8X9y-yJqThGZdHGmaxHF-INlxRbKahU5yn9qb7BY7AnovdHqmTdaev820l55OT8mh9r6dnSAwvJ8fURWm0qmw60LUdvFvNxnA90" alt="Global Expansion">
+<div class="hero-overlay">
+<span class="badge">CORPORATE</span>
+<h1>VETA Announces Global Expansion</h1>
+<p>2 hours ago • 4 min read</p>
 </div>
 </section>
-<!-- Categories horizontal scroll -->
-<nav class="mt-lg">
-<div class="flex overflow-x-auto no-scrollbar gap-sm px-margin-mobile">
-<button class="flex-shrink-0 px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded-none">All</button>
-<button class="flex-shrink-0 px-md py-2 bg-surface-container text-on-surface-variant font-label-md text-label-md rounded-none border border-outline-variant">Corporate</button>
-<button class="flex-shrink-0 px-md py-2 bg-surface-container text-on-surface-variant font-label-md text-label-md rounded-none border border-outline-variant">Tech</button>
-<button class="flex-shrink-0 px-md py-2 bg-surface-container text-on-surface-variant font-label-md text-label-md rounded-none border border-outline-variant">Events</button>
-<button class="flex-shrink-0 px-md py-2 bg-surface-container text-on-surface-variant font-label-md text-label-md rounded-none border border-outline-variant">Investors</button>
+
+<section>
+<div class="article">
+<div style="flex:1">
+<span class="tag">FINANCE</span>
+<h3>Q3 Financial Results Outperform Expectations</h3>
+<p>5 mins ago</p>
 </div>
-</nav>
-<!-- News Feed -->
-<section class="mt-xl px-margin-mobile flex flex-col gap-xl">
-<!-- Article 1 -->
-<div class="flex flex-col gap-md border-b border-outline-variant pb-xl last:border-0">
-<div class="flex gap-md">
-<div class="flex-1">
-<span class="text-[#007BFF] font-label-md text-label-md font-bold mb-xs block">FINANCE</span>
-<h3 class="font-headline-md text-headline-md text-on-background leading-snug mb-xs">Q3 Financial Results Outperform Expectations</h3>
-<p class="font-caption text-caption text-on-surface-variant">5 mins ago</p>
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLiLAZPV9JgUuODyceESJ5c6NAYAWXJVLO_VrcKN1S8eP_kiQlTqREephqsX_ZzDSlUQ8R6UlQMfEKg4sPYS3CJ7HKJHhYoPs4Df4ai8LJGCS3dOgGuUgQqRBYe6dS_qCBMo5zey41s6ELKIGDTrrpEJP7Om8Q3JUHUeBUF24lY25eW9zdWzCKjK6OaTY7iX0IEb0YSdlktbJLArol9LNf2Sc3eIjLvpr8gej-ELHmZ5h_CSKz_MWJrbDt5bqyhef9i-4FfFuzMUg" alt="Financial Chart">
 </div>
-<div class="w-24 h-24 flex-shrink-0">
-<img alt="Financial Chart" class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="A clean, minimalist graph showing an upward growth trend displayed on a sleek digital interface. The background is a deep navy blue with subtle grid lines, maintaining a corporate modernism aesthetic. The visual is sharp and data-driven, symbolizing financial success and market leadership in a high-tech corporate landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLiLAZPV9JgUuODyceESJ5c6NAYAWXJVLO_VrcKN1S8eP_kiQlTqREephqsX_ZzDSlUQ8R6UlQMfEKg4sPYS3CJ7HKJHhYoPs4Df4ai8LJGCS3dOgGuUgQqRBYe6dS_qCBMo5zey41s6ELKIGDTrrpEJP7Om8Q3JUHUeBUF24lY25eW9zdWzCKjK6OaTY7iX0IEb0YSdlktbJLArol9LNf2Sc3eIjLvpr8gej-ELHmZ5h_CSKz_MWJrbDt5bqyhef9i-4FfFuzMUg"/>
+
+<div class="article">
+<div style="flex:1">
+<span class="tag">TECH</span>
+<h3>New Security Protocols Deployed Across VETA Ecosystem</h3>
+<p>1 hour ago</p>
 </div>
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuATZBAZQD7p1uPSGk4biUXZRJ4oRA7w_A4fzjM-BSHS0Q9Wk5tx4R3OQpTiJHVbDHYXME577lBY0p9YxKu5IfwNMIVKx2Q4LLbS5Rs8A-hobPCcknLe_bDvwxzgUg7AiqJwH2C6AgnRfOO-035M_376_Ss_5cbZ3kpsWSd3SUz3HpbATqE-TKdPlx4IEUq2P2J-KMr5aV8QSVRuxtLV_LiQ8lUlGM1s467tm4UgSpJtxoebRBUVoanGdyOqILOXG2fwn59ERosyOXU" alt="Security Tech">
 </div>
+
+<div class="article">
+<div style="flex:1">
+<span class="tag">INVESTORS</span>
+<h3>VETA Insights: The Future of Sovereign Digital Assets</h3>
+<p>3 hours ago</p>
 </div>
-<!-- Article 2 -->
-<div class="flex flex-col gap-md border-b border-outline-variant pb-xl last:border-0">
-<div class="flex gap-md">
-<div class="flex-1">
-<span class="text-[#007BFF] font-label-md text-label-md font-bold mb-xs block">TECH</span>
-<h3 class="font-headline-md text-headline-md text-on-background leading-snug mb-xs">New Security Protocols Deployed Across VETA Ecosystem</h3>
-<p class="font-caption text-caption text-on-surface-variant">1 hour ago</p>
-</div>
-<div class="w-24 h-24 flex-shrink-0">
-<img alt="Security Tech" class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="Abstract digital visualization of complex circuit patterns and encryption locks glowing in electric blue against a deep black background. The style is highly technical and modern, emphasizing absolute security and technological expertise. Macro photography perspective with shallow depth of field for a premium cinematic look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATZBAZQD7p1uPSGk4biUXZRJ4oRA7w_A4fzjM-BSHS0Q9Wk5tx4R3OQpTiJHVbDHYXME577lBY0p9YxKu5IfwNMIVKx2Q4LLbS5Rs8A-hobPCcknLe_bDvwxzgUg7AiqJwH2C6AgnRfOO-035M_376_Ss_5cbZ3kpsWSd3SUz3HpbATqE-TKdPlx4IEUq2P2J-KMr5aV8QSVRuxtLV_LiQ8lUlGM1s467tm4UgSpJtxoebRBUVoanGdyOqILOXG2fwn59ERosyOXU"/>
-</div>
-</div>
-</div>
-<!-- Article 3 -->
-<div class="flex flex-col gap-md border-b border-outline-variant pb-xl last:border-0">
-<div class="flex gap-md">
-<div class="flex-1">
-<span class="text-[#007BFF] font-label-md text-label-md font-bold mb-xs block">INVESTORS</span>
-<h3 class="font-headline-md text-headline-md text-on-background leading-snug mb-xs">VETA Insights: The Future of Sovereign Digital Assets</h3>
-<p class="font-caption text-caption text-on-surface-variant">3 hours ago</p>
-</div>
-<div class="w-24 h-24 flex-shrink-0">
-<img alt="Digital Assets" class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="A highly detailed close-up of a sophisticated blockchain network visualization. Glowing nodes and data connections in electric blue create a complex web in a dark space. The lighting is moody and focused, capturing the high-end technology used for managing digital assets in a corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVGLY2L8kmrp-9e_k40W42ErXRBQ_512KkLNZj9SwB9bxLF2QyM1-tHE5pSFntohXMDl_hiH4YSFkpvUgfo6GAEoUECdgEejiHJOHqc50pr_KUNh5dD00ughdMeQJIx2oq7Q8asbNCPSBIiY8FekIDkEe9HwSBX7__DWsZ49UWUGrGgWXcSwNwdkLF5KyG10j3vyT7ykpdmhn2PNVfPltJ6MOGxh_F3V6Z-VbQBBYwBt3p-PkRC9YuT3lWE8s3i8Aux0Pny83HHPM"/>
-</div>
-</div>
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVGLY2L8kmrp-9e_k40W42ErXRBQ_512KkLNZj9SwB9bxLF2QyM1-tHE5pSFntohXMDl_hiH4YSFkpvUgfo6GAEoUECdgEejiHJOHqc50pr_KUNh5dD00ughdMeQJIx2oq7Q8asbNCPSBIiY8FekIDkEe9HwSBX7__DWsZ49UWUGrGgWXcSwNwdkLF5KyG10j3vyT7ykpdmhn2PNVfPltJ6MOGxh_F3V6Z-VbQBBYwBt3p-PkRC9YuT3lWE8s3i8Aux0Pny83HHPM" alt="Digital Assets">
 </div>
 </section>
-<!-- Footer -->
-<footer class="w-full py-xl px-margin-mobile flex flex-col gap-md border-t border-outline-variant bg-surface-container-lowest">
-<div class="flex flex-col gap-sm">
-<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background">VETA</span>
-<p class="font-caption text-caption text-on-surface-variant">© 2024 VETA Digital Authority. All rights reserved.</p>
-</div>
-<div class="flex flex-wrap gap-md">
-<a class="font-caption text-caption text-on-surface-variant hover:text-tertiary transition-colors underline" href="#">Privacy Policy</a>
-<a class="font-caption text-caption text-on-surface-variant hover:text-tertiary transition-colors underline" href="#">Terms of Service</a>
-<a class="font-caption text-caption text-on-surface-variant hover:text-tertiary transition-colors underline" href="#">Contact</a>
-<a class="font-caption text-caption text-on-surface-variant hover:text-tertiary transition-colors underline" href="#">Investor Relations</a>
-</div>
-</footer>
+
 </main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-4 px-margin-mobile md:hidden bg-surface-container-lowest/60 backdrop-blur-xl border-t border-white/10 z-50">
-<a class="flex flex-col items-center justify-center text-primary scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-md text-label-md mt-1">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="newspaper">newspaper</span>
-<span class="font-label-md text-label-md mt-1">News</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
-<span class="font-label-md text-label-md mt-1">Market</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-<span class="font-label-md text-label-md mt-1">Search</span>
-</a>
-</nav>
-</body></html>
+
+<footer>
+<div style="font-weight:bold;font-size:18px;color:#c6c6c6;margin-bottom:8px">VETA</div>
+<p>© 2026 VETA COMPANY LTD. All rights reserved.</p>
+<p style="margin-top:16px">
+<a href="privacy.html" style="color:#988e90;margin:0 8px;text-decoration:none">Privacy Policy</a>
+<a href="terms.html" style="color:#988e90;margin:0 8px;text-decoration:none">Terms</a>
+<a href="contact.html" style="color:#988e90;margin:0 8px;text-decoration:none">Contact</a>
+</p>
+</footer>
+
+</body>
+</html>

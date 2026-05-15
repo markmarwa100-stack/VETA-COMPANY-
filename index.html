@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,15 +10,15 @@ body {
   padding:0;
   background:#000;
   color:#e0e2ed;
-  font-family:Arial,sans-serif;
+  font-family:'Inter', Arial, sans-serif;
 }
 header {
   position:fixed;
   top:0;
-  left:0;
   width:100%;
-  z-index:100;
-  background:rgba(0,0,0,0.95);
+  z-index:50;
+  background:rgba(0,0,0,0.9);
+  backdrop-filter:blur(8px);
   border-bottom:1px solid #27272a;
 }
 .nav-wrap {
@@ -30,37 +30,35 @@ header {
   padding:12px 16px;
 }
 .logo {
-  color:#0084ff;
-  font-weight:bold;
-  font-size:20px;
   display:flex;
   align-items:center;
   gap:8px;
+  color:#0084ff;
+  font-weight:bold;
+  font-size:20px;
 }
 nav {
   display:flex;
+  gap:24px;
 }
 nav a {
   color:#c1c6d7;
   text-decoration:none;
-  margin:0 12px;
   font-size:13px;
   text-transform:uppercase;
   letter-spacing:0.05em;
 }
-nav a.active {
-  color:#0084ff;
-  font-weight:bold;
-}
+nav a.active,
 nav a:hover {
   color:#0084ff;
+  font-weight:bold;
 }
 .menu-btn {
   display:none;
   background:none;
   border:none;
   color:#e0e2ed;
-  font-size:28px;
+  font-size:32px;
   cursor:pointer;
 }
 .mobile-menu {
@@ -71,15 +69,15 @@ nav a:hover {
   padding:0 16px;
 }
 .mobile-menu a {
-  color:#c1c6d7;
+  color:#fff;
   text-decoration:none;
-  padding:16px 0;
-  font-size:15px;
+  padding:18px 0;
+  font-size:18px;
+  font-weight:bold;
   border-bottom:1px solid #1a1a1a;
 }
 .mobile-menu a.active {
   color:#0084ff;
-  font-weight:bold;
 }
 .mobile-menu.show {
   display:flex;
@@ -95,7 +93,12 @@ nav a:hover {
 .hero-bg {
   position:absolute;
   inset:0;
-  background:linear-gradient(to right,rgba(0,0,0,1),rgba(0,0,0,0.85),transparent);
+}
+.hero-bg::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right,#000,#000d9,transparent);
 }
 .hero-bg img {
   width:100%;
@@ -118,13 +121,12 @@ nav a:hover {
   border-radius:4px;
   font-size:12px;
   text-transform:uppercase;
-  letter-spacing:0.05em;
   margin-bottom:16px;
 }
 h1 {
   font-size:36px;
   font-weight:bold;
-  color:#ffffff;
+  color:#fff;
   line-height:1.1;
   margin:0 0 16px 0;
 }
@@ -142,7 +144,7 @@ p {
   display:inline-block;
   padding:12px 24px;
   background:#0084ff;
-  color:#ffffff;
+  color:#fff;
   text-decoration:none;
   font-weight:bold;
   border-radius:8px;
@@ -155,8 +157,8 @@ p {
 .stats {
   padding:40px 16px;
   background:#000;
-  border-top:1px solid rgba(39,39,42,0.3);
-  border-bottom:1px solid rgba(39,39,42,0.3);
+  border-top:1px solid #27272a4d;
+  border-bottom:1px solid #27272a4d;
 }
 .stats-grid {
   max-width:1320px;
@@ -179,7 +181,7 @@ p {
 }
 footer {
   background:#000;
-  border-top:1px solid rgba(39,39,42,0.2);
+  border-top:1px solid #27272a33;
   padding:32px 16px;
   text-align:center;
   font-size:12px;
@@ -197,78 +199,64 @@ footer {
 
 <header>
 <div class="nav-wrap">
-<div class="logo">⚙️ VETA</div>
-
-<nav>
-<a href="index.html" class="active">HOME</a>
-<a href="about.html">ABOUT</a>
-<a href="services.html">SERVICES</a>
-<a href="gallery.html">GALLERY</a>
-<a href="news.html">NEWS</a>
-<a href="career.html">CAREER</a>
-<a href="support.html">SUPPORT</a>
-<a href="contact.html">CONTACT</a>
-</nav>
-
-<button class="menu-btn" id="menuBtn">☰</button>
+  <div class="logo">⚙️ VETA</div>
+  
+  <nav>
+    <a href="index.html" class="active">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="news.html">NEWS</a>
+    <a href="career.html">CAREER</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+  
+  <button class="menu-btn" id="menuBtn">☰</button>
 </div>
 
 <div class="mobile-menu" id="mobileMenu">
-<a href="index.html" class="active">HOME</a>
-<a href="about.html">ABOUT</a>
-<a href="services.html">SERVICES</a>
-<a href="gallery.html">GALLERY</a>
-<a href="news.html">NEWS</a>
-<a href="career.html">CAREER</a>
-<a href="support.html">SUPPORT</a>
-<a href="contact.html">CONTACT</a>
+  <a href="index.html" class="active">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="services.html">SERVICES</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="news.html">NEWS</a>
+  <a href="career.html">CAREER</a>
+  <a href="contact.html">CONTACT</a>
 </div>
 </header>
 
 <main>
 <section class="hero">
-<div class="hero-bg">
-<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsFJWNKCO1a0Rs8o_wZJRN6SsRb9PSqGfBe2GcHwmKByZm_3-wwF4g1o2QdauD3TwGzQ5PQLi-rl5bVLfUThGzHQDTQ9XSimYFTdEqiMRpM_HzMyFCSfw5UWBqy0Pd-FIpPQGpYKftoYzL0edY33JP-O02Pctrf_vNU5ClL1AtNtCWPtqGoklgFR35xl8FsQVaztTaWs0Tc7kWNK9CXSLw3h-AUeb4zbbSye-7TBR_EslP4OzXZ_lgiKaHUTb5DNn9OzmWCPDDkOtR" alt="Engineering environment">
-</div>
-<div class="hero-content">
-<span class="badge">Future Engineering</span>
-<h1>Innovating the Future with <span>Precision Tech</span></h1>
-<p>VETA COMPANY LTD provides cutting-edge technology and engineering solutions for a modern world. High-performance realities for complex technical challenges.</p>
-<div>
-<a href="contact.html" class="btn">Get Started</a>
-<a href="services.html" class="btn btn-outline">Services</a>
-</div>
-</div>
+  <div class="hero-bg">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsFJWNKCO1a0Rs8o_wZJRN6SsRb9PSqGfBe2GcHwmKByZm_3-wwF4g1o2QdauD3TwGzQ5PQLi-rl5bVLfUThGzHQDTQ9XSimYFTdEqiMRpM_HzMyFCSfw5UWBqy0Pd-FIpPQGpYKftoYzL0edY33JP-O02Pctrf_vNU5ClL1AtNtCWPtqGoklgFR35xl8FsQVaztTaWs0Tc7kWNK9CXSLw3h-AUeb4zbbSye-7TBR_EslP4OzXZ_lgiKaHUTb5DNn9OzmWCPDDkOtR" alt="Engineering environment">
+  </div>
+  <div class="hero-content">
+    <span class="badge">Future Engineering</span>
+    <h1>Innovating the Future with <span>Precision Tech</span></h1>
+    <p>VETA COMPANY LTD provides cutting-edge technology and engineering solutions for a modern world. High-performance realities for complex technical challenges.</p>
+    <div>
+      <a href="contact.html" class="btn">Get Started</a>
+      <a href="services.html" class="btn btn-outline">Services</a>
+    </div>
+  </div>
 </section>
 
 <section class="stats">
-<div class="stats-grid">
-<div>
-<div class="stat-num">500+</div>
-<div class="stat-label">Projects</div>
-</div>
-<div>
-<div class="stat-num">150</div>
-<div class="stat-label">Engineers</div>
-</div>
-<div>
-<div class="stat-num">24/7</div>
-<div class="stat-label">Support</div>
-</div>
-<div>
-<div class="stat-num">12</div>
-<div class="stat-label">Tech Hubs</div>
-</div>
-</div>
+  <div class="stats-grid">
+    <div><div class="stat-num">500+</div><div class="stat-label">Projects</div></div>
+    <div><div class="stat-num">150</div><div class="stat-label">Engineers</div></div>
+    <div><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
+    <div><div class="stat-num">12</div><div class="stat-label">Tech Hubs</div></div>
+  </div>
 </section>
 </main>
 
 <footer>
 ⚙️ VETA © 2026 VETA COMPANY LTD. All rights reserved.
 <div style="margin-top:12px">
-<a href="privacy.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Privacy</a>
-<a href="terms.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Terms</a>
-<a href="career.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Careers</a>
+  <a href="privacy.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Privacy</a>
+  <a href="terms.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Terms</a>
+  <a href="career.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Careers</a>
 </div>
 </footer>
 
@@ -280,7 +268,6 @@ menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('show');
 });
 
-// Close menu when a link is clicked
 document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('show');

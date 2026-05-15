@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,6 +38,11 @@ header {
   align-items:center;
   gap:8px;
 }
+
+/* Desktop nav */
+nav {
+  display:flex;
+}
 nav a {
   color:#c1c6d7;
   text-decoration:none;
@@ -53,6 +58,40 @@ nav a.active {
 nav a:hover {
   color:#adc7ff;
 }
+
+/* Hamburger button */
+.menu-btn {
+  display:none;
+  background:none;
+  border:none;
+  color:#e5e2e1;
+  font-size:32px;
+  cursor:pointer;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display:none;
+  flex-direction:column;
+  background:#000;
+  border-top:1px solid #414754;
+  padding:0 16px;
+}
+.mobile-menu a {
+  color:#fff;
+  text-decoration:none;
+  padding:18px 0;
+  font-size:18px;
+  font-weight:bold;
+  border-bottom:1px solid #1a1a1a;
+}
+.mobile-menu a.active {
+  color:#adc7ff;
+}
+.mobile-menu.show {
+  display:flex;
+}
+
 main {
   padding-top:80px;
 }
@@ -139,8 +178,10 @@ footer {
   font-size:12px;
   color:#c1c6d7;
 }
+
 @media(max-width:768px){
   nav {display:none;}
+  .menu-btn {display:block;}
   h1 {font-size:32px;}
 }
 </style>
@@ -149,17 +190,31 @@ footer {
 
 <header>
 <div class="nav-wrap">
-<div class="logo">⚙️ VETA</div>
-<nav>
-<a href="index.html">HOME</a>
-<a href="about.html" class="active">ABOUT</a>
-<a href="services.html">SERVICES</a>
-<a href="gallery.html">GALLERY</a>
-<a href="news.html">NEWS</a>
-<a href="career.html">CAREER</a>
-<a href="support.html">SUPPORT</a>
-<a href="contact.html">CONTACT</a>
-</nav>
+  <div class="logo">⚙️ VETA</div>
+  
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html" class="active">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="news.html">NEWS</a>
+    <a href="career.html">CAREER</a>
+    <a href="support.html">SUPPORT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+  
+  <button class="menu-btn" id="menuBtn">☰</button>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="about.html" class="active">ABOUT</a>
+  <a href="services.html">SERVICES</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="news.html">NEWS</a>
+  <a href="career.html">CAREER</a>
+  <a href="support.html">SUPPORT</a>
+  <a href="contact.html">CONTACT</a>
 </div>
 </header>
 
@@ -233,6 +288,21 @@ footer {
 <a href="contact.html" style="color:#c1c6d7;margin:0 8px;text-decoration:none">Contact</a>
 </div>
 </footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('show');
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+  });
+});
+</script>
 
 </body>
 </html>
